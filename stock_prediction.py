@@ -19,6 +19,13 @@ model.fit(x_train, y_train)
 
 report= model.score(x_test, y_test)
 
-result = model.predict(x_test)
+predictions = model.predict(x_test)
+result = []
+for i in range(len(predictions)):
+    if predictions[i]==1:
+        result.append('Up')
+    else:
+        result.append('Down')
+
 print(report)
 print(result)
